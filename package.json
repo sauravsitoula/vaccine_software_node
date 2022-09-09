@@ -2,8 +2,12 @@
   "name": "rest-api-tutorial-updated",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Tom Nagle",
-  "license": "MIT",
+  "engines": {
+    "node": "16.16.0",
+    "npm": "8.11.0"
+  },
+  "author": "Saurav Sitoula",
+  "license": "",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc"
