@@ -1,5 +1,5 @@
 import { get } from "lodash";
-import config from "config";
+import config from "../../config/default";
 import { FilterQuery, UpdateQuery } from "mongoose";
 import SessionModel, { SessionDocument } from "../models/session.model";
 import { verifyJwt, signJwt } from "../utils/jwt.utils";
@@ -42,7 +42,7 @@ export async function reIssueAccessToken({
   const accessToken = signJwt(
     { ...user, session: session._id },
     "accessTokenPrivateKey",
-    { expiresIn: config.get("accessTokenTtl") } // 15 minutes
+    { expiresIn: config.accessTokenTtl } // 15 minutes
   );
 
   return accessToken;

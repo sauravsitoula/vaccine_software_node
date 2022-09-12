@@ -1,7 +1,4 @@
 import express, { Request, Response } from "express";
-// import dotenv from "dotenv";
-// dotenv.config();
-// import config from "config";
 import responseTime from "response-time";
 import connect from "./utils/connect";
 import logger from "./utils/logger";
@@ -11,7 +8,6 @@ import { restResponseTimeHistogram, startMetricsServer } from "./utils/metrics";
 import swaggerDocs from "./utils/swagger";
 import cors from 'cors';
 
-// const port = config.get<number>("port");
 const port = process.env.PORT || 1337;
 
 const app = express();
