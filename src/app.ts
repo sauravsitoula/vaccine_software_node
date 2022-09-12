@@ -11,7 +11,8 @@ import { restResponseTimeHistogram, startMetricsServer } from "./utils/metrics";
 import swaggerDocs from "./utils/swagger";
 import cors from 'cors';
 
-const port = config.get<number>("port");
+// const port = config.get<number>("port");
+const port = process.env.PORT || 1337;
 
 const app = express();
 
@@ -43,7 +44,7 @@ app.listen(port, async () => {
 
   routes(app);
 
-  startMetricsServer();
+  // startMetricsServer();
 
-  swaggerDocs(app, port);
+  // swaggerDocs(app, port);
 });
